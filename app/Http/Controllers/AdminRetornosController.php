@@ -318,15 +318,30 @@
 
 	    //** START RETORNOS**//
 	    public function redirectMalEstadoInterno(){
-	     	return view("retornos.malEstadoInterno");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Mal Estado Interno";
+	     	return view("retornos.malEstadoInterno",compact('page_title'));
 	    }
 
 	    public function redirectDevoluciones(){
-	     	return view("retornos.devoluciones");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Devoluciones";
+	     	return view("retornos.devoluciones",compact('page_title'));
 	    }
 
 	    public function redirectRechazos(){
-	     	return view("retornos.rechazos");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Rechazos";
+	     	return view("retornos.rechazos",compact('page_title'));
 	    }
 	    //** END RETORNOS**// 
 

@@ -40,7 +40,7 @@
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Name","name"=>"name","type"=>"text","required"=>TRUE,"validation"=>"required|string|min:3|max:70","placeholder"=>"Puedes introducir solo una letra"];
+			//$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'Puedes introducir solo una letra'];
 			# OLD END FORM
 
 			/* 
@@ -318,47 +318,102 @@
 
 	    //** START INVENTARIO**//
 	    public function redirectMatchStockMbaWms(){
-	     	return view("inventario.matchStockMbaWms");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Match Stock MBA/WMS";
+	     	return view("inventario.matchStockMbaWms",compact('page_title'));
 	    }
 
 	    public function redirectEliminarLecturaInventario(){
-	     	return view("inventario.eliminarLecturaInventario");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Eliminar Lectura de Inventario";
+	     	return view("inventario.eliminarLecturaInventario",compact('page_title'));
 	    }
 
 	    public function redirectDescargarStockWms(){
-	     	return view("inventario.descargarStockWms");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Descargar el Stock WMS";
+	     	return view("inventario.descargarStockWms",compact('page_title'));
 	    }
 
 	    public function redirectDescargarStockWmsConsolidado(){
-	     	return view("inventario.descargarStockWmsConsolidado");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Descargar el Stock WMS Consolidado";
+	     	return view("inventario.descargarStockWmsConsolidado",compact('page_title'));
 	    }
 
 	    public function redirectAnalisisStock(){
-	     	return view("inventario.analisisStock");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Análisis de Stock";
+	     	return view("inventario.analisisStock",compact('page_title'));
 	    }
 
 	    public function redirectProductosBloqueados(){
-	     	return view("inventario.productosBloqueados");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Productos Bloqueados";
+	     	return view("inventario.productosBloqueados",compact('page_title'));
 	    }
 
 	    public function redirectUbicacionesDisponibles(){
-	     	return view("inventario.ubicacionesDisponibles");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Ubicaciones Disponibles";
+	     	return view("inventario.ubicacionesDisponibles",compact('page_title'));
 	    }
 
 	    public function redirectReporteProdCaducar(){
-	     	return view("inventario.reporteProdCaducar");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Reporte Prod a Caducar";
+	     	return view("inventario.reporteProdCaducar",compact('page_title'));
 	    }
 
 	    public function redirectInventarioUbicacion(){
-	     	return view("inventario.inventarioUbicacion");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Inventario por Ubicación";
+	     	return view("inventario.inventarioUbicacion",compact('page_title'));
 	    }
 
 	    public function redirectConsultaStockUbicacion(){
-	     	return view("inventario.consultaStockUbicacion");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Consulta de Stock por Ubicación";
+	     	return view("inventario.consultaStockUbicacion",compact('page_title'));
 	    }
 
 	    public function redirectConsultaStockMaterial(){
-	     	return view("inventario.consultaStockMaterial");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Consulta de Stock por Material";
+	     	return view("inventario.consultaStockMaterial",compact('page_title'));
 	    }
 	    //** END INVENTARIO**// 
 

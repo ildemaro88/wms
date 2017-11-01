@@ -318,19 +318,39 @@
 
 	    //** START DESPACHOS**//
 		public function redirectReporteDespachos(){
-			return view("despachos.reporteDespachos");
+			if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Reporte de Despachos";
+			return view("despachos.reporteDespachos",compact('page_title'));
 	    }
 
 	    public function redirectSeguimientoDespachos(){
-			return view("despachos.seguimientoDespachos");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "PRÓXIMAMENTE";
+			return view("despachos.seguimientoDespachos",compact('page_title'));
 	    }
 
 		public function redirectReporteProductosFacturadosNoDespachados(){
-			return view("despachos.reporteProductosFacturadosNoDespachados");
+			if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Reporte de Productos facturados y no despachados";
+			return view("despachos.reporteProductosFacturadosNoDespachados",compact('page_title'));
 	    }
 
 	    public function redirectDocumentosDigitalizados(){
-			return view("despachos.documentosDigitalizados");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Buscar un documento digitalizado";
+			return view("despachos.documentosDigitalizados",compact('page_title'));
 	    }
 	    //** END DESPACHOS**//
 

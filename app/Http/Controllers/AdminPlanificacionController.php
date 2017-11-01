@@ -318,14 +318,23 @@
 
 	    //** START PLANIFICACIÓN**//
 	    public function redirectPlanificar(){
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
 	     	return view("planificacion.planificador");
 	    }
 
 	    public function redirectAsignarViajeDespacho(){
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
 	     	return view("planificacion.asignarViajeDespacho");
 	    }
 
 	    public function redirectDuplicarFactura(){
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
 	    	return view("planificacion.duplicarFactura");
 	    }
 	    //** END PLANIFICACIÓN**// 

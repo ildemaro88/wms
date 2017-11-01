@@ -318,11 +318,21 @@
 
 	    //** START TRANSACCIONES**//
 	    public function redirectConsultarLiquidacion(){
-	     	return view("transacciones.consultarLiquidacion");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Consultar Liquidación";
+	     	return view("transacciones.consultarLiquidacion" ,compact('page_title'));
 	    }
 
 	    public function redirectBuscarTransacciones(){
-	     	return view("transacciones.buscarTransacciones");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Buscar Transacciones";
+	     	return view("transacciones.buscarTransacciones",compact('page_title'));
 	    }
 	    //** END TRANSACCIONES**// 
 

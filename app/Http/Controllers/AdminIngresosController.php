@@ -318,19 +318,37 @@
 
 	    //** START INGRESOS**//
 	    public function redirectReabrirIngreso(){
-	     	return view("ingresos.reabrirIngreso");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Buscar un documento digitalizado";
+	     	return view("ingresos.reabrirIngreso",compact('page_title'));
 	    }
 
 	    public function redirectCrearIngreso(){
-	     	return view("ingresos.crearIngreso");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Crear un Ingreso";
+	     	return view("ingresos.crearIngreso",compact('page_title'));
 	    }
 
 	    public function redirectMatchIngresosDia(){
-	     	return view("ingresos.matchIngresosDia");
+	    	if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {    
+			    CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+
+			$page_title = "Match Ingreso por Día";
+	     	return view("ingresos.matchIngresosDia",compact('page_title'));
 	    }
 
 	    public function redirectMatchIngresosDiaConsolidado(){
-	     	return view("ingresos.matchIngresosDiaConsolidado");
+	    	
+
+			$page_title = "Match Ingreso por Día Consolidado";
+	     	return view("ingresos.matchIngresosDiaConsolidado",compact('page_title'));
 	    }
 	    //** END INGRESOS**// 
 

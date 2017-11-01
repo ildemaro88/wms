@@ -15,51 +15,52 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 //** START PLANIFICACIÓN **//
-Route::get('planificacion/planificador','AdminPlanificacionController@redirectPlanificar');
-Route::get('planificacion/asignar-viaje-despacho','AdminPlanificacionController@redirectAsignarViajeDespacho');
-Route::get('planificacion/duplicar-factura','AdminPlanificacionController@redirectDuplicarFactura');
+Route::get('admin/planificacion/planificador','AdminPlanificacionController@redirectPlanificar');
+Route::get('admin/planificacion/asignar-viaje-despacho','AdminPlanificacionController@redirectAsignarViajeDespacho');
+Route::get('admin/planificacion/duplicar-factura','AdminPlanificacionController@redirectDuplicarFactura');
 //** END PLANIFICACIÓN **//
 
 //** START INGRESOS **//
-Route::get('ingresos/reabrir-ingreso','AdminIngresosController@redirectReabrirIngreso');
-Route::get('ingresos/crear-ingreso','AdminIngresosController@redirectCrearIngreso');
-Route::get('ingresos/match-ingreso-dia','AdminIngresosController@redirectMatchIngresosDia');
-Route::get('ingresos/match-ingreso-dia-consolidado','AdminIngresosController@redirectMatchIngresosDiaConsolidado');
+Route::get('admin/ingresos/reabrir-ingreso','AdminIngresosController@redirectReabrirIngreso');
+Route::get('admin/ingresos/crear-ingreso','AdminIngresosController@redirectCrearIngreso');
+Route::get('admin/ingresos/match-ingreso-dia','AdminIngresosController@redirectMatchIngresosDia');
+Route::get('admin/ingresos/match-ingreso-dia-consolidado','AdminIngresosController@redirectMatchIngresosDiaConsolidado');
 //** END INGRESOS **//
 
 //** START DESPACHOS **//
-Route::get('despachos/reporte','AdminDespachosController@redirectReporteDespachos');
-Route::get('despachos/reporte/productos-facturados-no-despachados','AdminDespachosController@redirectReporteProductosFacturadosNoDespachados');
-Route::get('despachos/documentos-digitalizados','AdminDespachosController@redirectDocumentosDigitalizados');
-Route::get('despachos/seguimiento','AdminDespachosController@redirectSeguimientoDespachos');
+Route::get('admin/despachos/reporte','AdminDespachosController@redirectReporteDespachos');
+Route::get('admin/despachos/reporte/productos-facturados-no-despachados','AdminDespachosController@redirectReporteProductosFacturadosNoDespachados');
+Route::get('admin/despachos/documentos-digitalizados','AdminDespachosController@redirectDocumentosDigitalizados');
+Route::get('admin/despachos/seguimiento','AdminDespachosController@redirectSeguimientoDespachos');
 //** END DESPACHOS **//
 
 //** START INVENTARIO **//
-Route::get('inventario/match-stock-mba-wms','AdminInventarioController@redirectMatchStockMbaWms');
-Route::get('inventario/eliminar-lectura-inventario','AdminInventarioController@redirectEliminarLecturaInventario');
-Route::get('inventario/descargar-stock-wms','AdminInventarioController@redirectDescargarStockWms');
-Route::get('inventario/descargar-stock-wms-consolidado','AdminInventarioController@redirectDescargarStockWmsConsolidado');
-Route::get('inventario/analisis-stock','AdminInventarioController@redirectAnalisisStock');
-Route::get('inventario/productos-bloqueados','AdminInventarioController@redirectProductosBloqueados');
-Route::get('inventario/ubicaciones-disponibles','AdminInventarioController@redirectUbicacionesDisponibles');
-Route::get('inventario/reporte-prod-caducar','AdminInventarioController@redirectReporteProdCaducar');
-Route::get('inventario/inventario-por-ubicacion','AdminInventarioController@redirectInventarioUbicacion');
-Route::get('inventario/consulta-stock-por-ubicacion','AdminInventarioController@consultaStockUbicacion');
-Route::get('inventario/consulta-stock-por-material','AdminInventarioController@redirectConsultaStockMaterial');
+Route::get('admin/inventario/match-stock-mba-wms','AdminInventarioController@redirectMatchStockMbaWms');
+Route::get('admin/inventario/eliminar-lectura-inventario','AdminInventarioController@redirectEliminarLecturaInventario');
+Route::get('admin/inventario/descargar-stock-wms','AdminInventarioController@redirectDescargarStockWms');
+Route::get('admin/inventario/descargar-stock-wms-consolidado','AdminInventarioController@redirectDescargarStockWmsConsolidado');
+Route::get('admin/inventario/analisis-stock','AdminInventarioController@redirectAnalisisStock');
+Route::get('admin/inventario/productos-bloqueados','AdminInventarioController@redirectProductosBloqueados');
+Route::get('admin/inventario/ubicaciones-disponibles','AdminInventarioController@redirectUbicacionesDisponibles');
+Route::get('admin/inventario/reporte-prod-caducar','AdminInventarioController@redirectReporteProdCaducar');
+Route::get('admin/inventario/inventario-por-ubicacion','AdminInventarioController@redirectInventarioUbicacion');
+Route::get('admin/inventario/consulta-stock-por-ubicacion','AdminInventarioController@consultaStockUbicacion');
+Route::get('admin/inventario/consulta-stock-por-material','AdminInventarioController@redirectConsultaStockMaterial');
 //** END INVENTARIO **//
 
 //** START RETORNOS **//
-Route::get('retornos/mal-estado-interno','AdminRetornosController@redirectMalEstadoInterno');
-Route::get('retornos/devoluciones','AdminRetornosController@redirectDevoluciones');
-Route::get('retornos/rechazos','AdminRetornosController@redirectRechazos');
+Route::get('admin/users/s','AdminRetornosController@redirectMalEstadoInterno');
+Route::get('admin/retornos/devoluciones','AdminRetornosController@redirectDevoluciones');
+Route::get('admin/retornos/rechazos','AdminRetornosController@redirectRechazos');
 //** END RETORNOS **//
 
 //** START TRANSACCIONES **//
-Route::get('transacciones/consultar-liquidacion','AdminRedirectController@redirectConsultarLiquidacion');
-Route::get('transacciones/buscar-transacciones','AdminRedirectController@redirectBuscarTransacciones');
+Route::get('admin/transacciones/consultar-liquidacion','AdminTransaccionesController@redirectConsultarLiquidacion');
+Route::get('admin/transacciones/buscar-transacciones','AdminTransaccionesController@redirectBuscarTransacciones');
 //** END TRANSACCIONES **//redirectTracking
 
 //** START TRANSACCIONES **//
-Route::get('traking','AdminRedirectController@redirectTracking');
+Route::get('admin/traking','AdminTrackingController@redirectTracking');
 //** END TRANSACCIONES **//

@@ -318,7 +318,9 @@
 
 	    //** START TRACKING**//
 	    public function redirectTracking(){
-	    	$page_title ="holass";
+	    	
+
+			$page_title = "Traking";
 	     	return view("tracking.index",compact('page_title'));
 	    }
 	    //** END TRACKING**// 
